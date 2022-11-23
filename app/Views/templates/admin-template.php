@@ -47,15 +47,7 @@
                             Input
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a href="./rundown.php" class="dropdown-item">Rundown</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
                             <li><a class="dropdown-item" href="/admin/create/mahasiswa">Data Mahasiswa</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="./checklist.php">Checklist</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -63,15 +55,7 @@
                             Lihat
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a href="./show-rundown.php" class="dropdown-item">Rundown</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
                             <li><a class="dropdown-item" href="/admin/list/mahasiswa">Data Mahasiswa</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="./show-checklist.php">Checklist</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
