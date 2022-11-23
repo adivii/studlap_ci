@@ -37,6 +37,8 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'MahasiswaController::index');
 $routes->get('/user/bus', 'MahasiswaController::list_bus');
+$routes->get('/user/kamar', 'MahasiswaController::list_kamar');
+$routes->get('/user/kelompok', 'MahasiswaController::list_kelompok');
 $routes->get('/admin/', 'AdminController::index');
 $routes->get('/admin/list/mahasiswa', 'AdminController::show_mhs');
 $routes->get('/admin/create/mahasiswa', 'AdminController::add_mhs');
@@ -50,11 +52,11 @@ $routes->get('/admin/get/bus', 'BusController::get_bus');
 $routes->get('/admin/get/kelompok', 'KelompokController::get_kelompok');
 $routes->get('/user/get/kelas', 'KelasController::get_kelas');
 $routes->get('/user/get/kamar/(:any)', 'KamarController::get_kamar_mahasiswa/$1');
-$routes->get('/user/get/kelas', 'KelasController::get_kelas');
 $routes->get('/user/get/kamar', 'KamarController::get_kamar_mahasiswa/-');
 $routes->get('/user/get/bus/(:any)', 'BusController::get_bus_mahasiswa/$1');
 $routes->get('/user/get/bus', 'BusController::get_bus_mahasiswa/-');
-$routes->get('/user/get/kelompok', 'KelompokController::get_kelompok');
+$routes->get('/user/get/kelompok/(:any)', 'KelompokController::get_kelompok_mahasiswa/$1');
+$routes->get('/user/get/kelompok', 'KelompokController::get_kelompok_mahasiswa/-');
 
 /*
  * --------------------------------------------------------------------

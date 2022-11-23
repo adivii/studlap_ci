@@ -30,10 +30,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto me-1 mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link text-light active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="page/rundown.html">Rundown</a>
+                        <a class="nav-link text-light active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,15 +41,12 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="page/kelompok-kamar.html">Kamar Hotel</a></li>
+                            <li><a class="dropdown-item" href="/user/kamar">Kamar Hotel</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="page/kelompok-tugas.html">Kelompok Tugas</a></li>
+                            <li><a class="dropdown-item" href="user/kelompok">Kelompok Tugas</a></li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="page/checklist.html">Checklist Bawaan</a>
                     </li>
                 </ul>
             </div>

@@ -21,6 +21,16 @@ class MahasiswaController extends BaseController
         return view('user/list-bus');
     }
 
+    public function list_kamar()
+    {
+        return view('user/list-kamar');
+    }
+
+    public function list_kelompok()
+    {
+        return view('user/list-kelompok');
+    }
+
     public function save()
     {
         $mahasiswa_model = new MahasiswaModel();

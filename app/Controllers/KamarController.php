@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\KamarModel;
+use App\Models\MahasiswaModel;
 
 class KamarController extends BaseController
 {
@@ -31,34 +32,26 @@ class KamarController extends BaseController
         echo $result;
     }
 
-    public function get_kamar_mahasiswa()
+    public function get_kamar_mahasiswa($key)
     {
-        include './connection.php';
+        $model_kamar = new KamarModel();
+        $model_mhs = new MahasiswaModel();
 
-        $key = $_GET["key"];
         $result = "";
 
-        if ($key === "") {
-            $query = "SELECT `mahasiswa`.`npm_mhs`, `mahasiswa`.`nama_mhs`, `kamar`.`nomor_kamar`
-                FROM `mahasiswa`, `kamar`
-                WHERE `mahasiswa`.`id_kamar`=`kamar`.`id_kamar`
-                ORDER BY `mahasiswa`.`npm_mhs`;";
+        if ($key === "-") {
+            $queryResult = $model_mhs->findAll();
         } else {
-            $query = "SELECT `mahasiswa`.`npm_mhs`, `mahasiswa`.`nama_mhs`, `kamar`.`nomor_kamar`
-                FROM `mahasiswa`, `kamar`
-                WHERE ((`mahasiswa`.`npm_mhs` LIKE '%$key%') OR (`mahasiswa`.`nama_mhs` LIKE '%$key%') OR (CONCAT('Kamar ', `kamar`.`nomor_kamar`) LIKE '%$key%')) AND `mahasiswa`.`id_kamar`=`kamar`.`id_kamar`
-                ORDER BY `mahasiswa`.`npm_mhs`;";
+            $queryResult = $model_mhs->like('npm_mhs', $key)->orlike('nama_mhs', $key)->findAll();
         }
 
-        $queryResult = mysqli_query($conn, $query);
-
-        if (mysqli_num_rows($queryResult) > 0) {
-            while ($row = mysqli_fetch_assoc($queryResult)) {
+        if ($queryResult) {
+            foreach($queryResult as $row) {
                 $result = $result . "
             <tr>
                 <td class=\"card-text-font\">" . $row["npm_mhs"] . "</td>
                 <td class=\"card-text-font\">" . $row["nama_mhs"] . "</td>
-                <td class=\"card-text-font\">Kamar " . $row["nomor_kamar"] . "</td>
+                <td class=\"card-text-font\">Kamar " . $model_kamar->find($row["id_kamar"])["nomor_kamar"] . "</td>
             </tr>
         ";
             }
